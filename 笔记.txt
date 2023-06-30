@@ -1,0 +1,2 @@
+在public中设置创建js文件夹,再创建rem.js 在其中进行移动端适配
+1.axios 和axios 的封装
