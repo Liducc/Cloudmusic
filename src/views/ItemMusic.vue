@@ -1,6 +1,6 @@
 <template>
 <ItemMusicTop :playlist="state.playlist"></ItemMusicTop>
-    <ItemMusicList/>
+<ItemMusicList :itemList="state.itemList" :subscribedCount="state.playlist.subscribedCount"></ItemMusicList>
 </template>
 <script>
 import { useRoute } from 'vue-router'
@@ -24,6 +24,7 @@ export default {
             // 获取歌单的歌曲
             let result = await getMusic(id)
             console.log(result);
+            state.itemList = result.data.songs
            // console.log(state.playlist);
            // 放置页面刷新数据丢失 将数据保存到本地
             sessionStorage.setItem('itemDetail', JSON.stringify(state))
